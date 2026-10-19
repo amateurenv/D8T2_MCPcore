@@ -113,7 +113,7 @@
     },
     {
       "name": "list_products",
-      "description": "TODO: опишите чтение каталога.",
+      "description": "Показывает каталог товаров с ценами, лимитами и остатками по размерам в порядке идентификаторов. Ничего не меняет.",
       "inputSchema": {
         "type": "object",
         "properties": {},
@@ -228,7 +228,7 @@
     },
     {
       "name": "get_coin_balance",
-      "description": "TODO: опишите чтение баланса и неизвестного пользователя.",
+      "description": "Показывает текущий баланс учебного пользователя в коинах. Ничего не меняет; неизвестный пользователь — USER_NOT_FOUND.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -320,7 +320,7 @@
     },
     {
       "name": "get_order_status",
-      "description": "TODO: опишите чтение состояния заказа.",
+      "description": "Показывает текущее состояние заказа: created, cancelled или picked_up. Ничего не меняет; неизвестный заказ — ORDER_NOT_FOUND.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -416,7 +416,7 @@
     },
     {
       "name": "create_order",
-      "description": "TODO: опишите создание заказа, списание, резервирование и отказы.",
+      "description": "Создаёт заказ на товар выбранного размера и количества, списывает коины и уменьшает остаток одной транзакцией. Возможные отказы: USER_NOT_FOUND, PRODUCT_NOT_FOUND, OUT_OF_STOCK, USER_LIMIT_EXCEEDED и INSUFFICIENT_COINS.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -528,7 +528,7 @@
     },
     {
       "name": "cancel_order",
-      "description": "TODO: опишите отмену созданного заказа и однократный возврат.",
+      "description": "Отменяет заказ в состоянии created и один раз возвращает списанные коины и товар. Неизвестный заказ — ORDER_NOT_FOUND; заказ в другом состоянии — ORDER_STATUS_ERROR.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -620,7 +620,7 @@
     },
     {
       "name": "confirm_pickup",
-      "description": "TODO: опишите выдачу созданного заказа без повторного списания.",
+      "description": "Подтверждает выдачу заказа в состоянии created, не списывая коины и товар повторно. Неизвестный заказ — ORDER_NOT_FOUND; заказ в другом состоянии — ORDER_STATUS_ERROR.",
       "inputSchema": {
         "type": "object",
         "properties": {
